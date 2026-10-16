@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX JANIYA | Free Fire Sensitivity & Optimization Store</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Orbitron for Sci-Fi Gaming Titles & Inter for crisp text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#ff0033',
+                            lightRed: '#ff2a4b',
+                            darkRed: '#80001a',
+                            glow: 'rgba(255, 0, 51, 0.4)',
+                            bgDark: '#08080a',
+                            cardBg: 'rgba(18, 18, 22, 0.75)',
+                            cardBorder: 'rgba(255, 0, 51, 0.25)'
+                        }
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 3s infinite ease-in-out',
+                        'float': 'float 4s infinite ease-in-out',
+                        'float-delayed': 'float 4s infinite ease-in-out 2s',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.7', transform: 'scale(1.05)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Ambient Glow Backgrounds and Neon Effects */
+        body {
+            background-color: #08080a;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .bg-glow-radial {
+            background: radial-gradient(circle at 75% 40%, rgba(255, 0, 51, 0.18) 0%, rgba(120, 0, 25, 0.08) 35%, rgba(8, 8, 10, 1) 70%);
+        }
+
+        .neon-border {
+            border: 1px solid rgba(255, 0, 51, 0.3);
+            box-shadow: 0 0 15px rgba(255, 0, 51, 0.15);
+        }
+
+        .neon-border:hover {
+            border-color: rgba(255, 0, 51, 0.6);
+            box-shadow: 0 0 20px rgba(255, 0, 51, 0.35);
+        }
+
+        .neon-button {
+            background: linear-gradient(135deg, #ff0033 0%, #d6002b 100%);
+            box-shadow: 0 0 25px rgba(255, 0, 51, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .neon-button:hover {
+            box-shadow: 0 0 35px rgba(255, 0, 51, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .text-glow-red {
+            text-shadow: 0 0 12px rgba(255, 0, 51, 0.6);
+        }
+
+        .glass-card {
+            background: rgba(18, 18, 24, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Avatar glow aura */
+        .character-aura {
+            position: relative;
+        }
+        .character-aura::before {
+            content: '';
+            position: absolute;
+            inset: -15px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,0,51,0.6) 0%, rgba(255,0,51,0) 70%);
+            z-index: -1;
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-glow-radial min-h-screen flex flex-col justify-between selection:bg-brand-red selection:text-white">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between relative z-50">
+        <!-- Logo Area -->
+        <div class="flex items-center space-x-3">
+            <a href="#" class="flex items-center space-x-2">
+                <span class="font-orbitron text-2xl sm:text-3xl font-black tracking-wider text-white">
+                    EX <span class="text-brand-red text-glow-red">JANIYA</span>
+                </span>
+            </a>
+            <!-- 24/7 Service Pill -->
+            <span class="px-2.5 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white bg-brand-red/90 rounded-full shadow-[0_0_10px_rgba(255,0,51,0.5)] border border-brand-lightRed">
+                24/7 Service
+            </span>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm tracking-wide text-gray-300">
+            <a href="#home" class="text-white border-b-2 border-brand-red pb-1 transition-all">HOME</a>
+            <a href="#services" class="hover:text-brand-red transition-colors">SERVICES</a>
+            <a href="#pricing" class="hover:text-brand-red transition-colors">PRICING</a>
+            <a href="#community" class="hover:text-brand-red transition-colors">COMMUNITY</a>
+        </nav>
+
+        <!-- Contact Button -->
+        <div class="hidden md:block">
+            <a href="#contact" class="neon-button px-6 py-2.5 rounded-full font-bold text-xs tracking-wider uppercase text-white inline-block">
+                CONTACT
+            </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-20 bg-brand-bgDark/95 backdrop-blur-xl border-b border-brand-cardBorder z-40 px-6 py-6 transition-all duration-300">
+        <div class="flex flex-col space-y-4 font-semibold tracking-wider text-sm">
+            <a href="#home" class="text-brand-red">HOME</a>
+            <a href="#services" class="text-gray-300 hover:text-white">SERVICES</a>
+            <a href="#pricing" class="text-gray-300 hover:text-white">PRICING</a>
+            <a href="#community" class="text-gray-300 hover:text-white">COMMUNITY</a>
+            <a href="#contact" class="neon-button text-center py-3 rounded-full font-bold text-xs uppercase text-white mt-2">
+                CONTACT
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= MAIN HERO SECTION ================= -->
+    <main id="home" class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16 flex-grow flex items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
+            
+            <!-- LEFT COLUMN: TEXT CONTENT & ACTION BUTTONS -->
+            <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
+                
+                <!-- Subheading Badge -->
+                <div class="inline-flex items-center space-x-2 bg-brand-red/10 border border-brand-red/30 px-3.5 py-1.5 rounded-full text-brand-lightRed text-xs sm:text-sm font-semibold tracking-wide">
+                    <i class="fa-solid fa-bolt text-brand-red"></i>
+                    <span>CUSTOMIZED SENSI & FPS PACK</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="font-orbitron text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-none text-white">
+                    EX JANIYA <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-brand-lightRed to-white text-glow-red">
+                        SENSI & OPTIMIZATION
+                    </span> <br>
+                    STORE
+                </h1>
+
+                <!-- Platform Compatibility Badges -->
+                <div class="flex flex-wrap gap-2 sm:gap-3 items-center pt-1">
+                    <span class="glass-card neon-border px-3.5 py-1.5 rounded-lg text-xs font-semibold text-gray-200 flex items-center space-x-2">
+                        <i class="fa-solid fa-desktop text-brand-red"></i>
+                        <span>PC / BlueStacks</span>
+                    </span>
+                    <span class="glass-card neon-border px-3.5 py-1.5 rounded-lg text-xs font-semibold text-gray-200 flex items-center space-x-2">
+                        <i class="fa-solid fa-mobile-screen-button text-brand-red"></i>
+                        <span>Android</span>
+                    </span>
+                    <span class="glass-card neon-border px-3.5 py-1.5 rounded-lg text-xs font-semibold text-gray-200 flex items-center space-x-2">
+                        <i class="fa-brands fa-apple text-brand-red"></i>
+                        <span>iOS</span>
+                    </span>
+                </div>
+
+                <!-- Subtitle Description -->
+                <p class="text-gray-400 text-sm sm:text-base leading-relaxed max-w-xl">
+                    <strong class="text-gray-200">Customized sensitivity</strong> tuned to YOUR device & playstyle. Better headshots. Smooth aim. <strong class="text-white">Zero lag.</strong>
+                </p>
+
+                <!-- Call To Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                    <!-- Primary Button -->
+                    <a href="#pricing" class="neon-button px-7 py-4 rounded-xl font-orbitron font-extrabold text-xs sm:text-sm text-white flex items-center justify-center space-x-2 uppercase tracking-wider">
+                        <i class="fa-solid fa-bolt text-sm"></i>
+                        <span>VIEW PRICING PLANS</span>
+                    </a>
+                    
+                    <!-- Secondary Button -->
+                    <a href="#proof" class="glass-card neon-border px-7 py-4 rounded-xl font-orbitron font-extrabold text-xs sm:text-sm text-white hover:text-brand-lightRed transition-colors flex items-center justify-center space-x-2 uppercase tracking-wider">
+                        <i class="fa-solid fa-play-circle text-base"></i>
+                        <span>VIEW GAMEPLAY PROOF</span>
+                    </a>
+                </div>
+
+                <!-- Trust Guarantees -->
+                <div class="pt-4 flex flex-wrap items-center gap-4 sm:gap-8 text-xs font-medium text-gray-400 border-t border-gray-800/60">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-circle-check text-brand-red text-sm"></i>
+                        <span>100% Safe & Clean</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-paper-plane text-brand-red text-sm"></i>
+                        <span>Fast WhatsApp Delivery</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-shield-halved text-brand-red text-sm"></i>
+                        <span>No Ban Guarantee</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: HERO CHARACTER GRAPHIC & FLOATING STAT CARDS -->
+            <div class="lg:col-span-5 relative flex items-center justify-center mt-6 lg:mt-0">
+                
+                <!-- Central Glowing Avatar Frame -->
+                <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full flex items-center justify-center character-aura">
+                    
+                    <!-- Outer Glowing Circular Border -->
+                    <div class="absolute inset-0 rounded-full border-2 border-brand-red/60 shadow-[0_0_30px_rgba(255,0,51,0.4)] animate-pulse-glow"></div>
+                    <div class="absolute inset-3 rounded-full border border-brand-red/30"></div>
+
+                    <!-- Cyber Ninja Avatar Image -->
+                    <div class="w-full h-full rounded-full overflow-hidden p-3 relative z-10">
+                        <img 
+                            src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=800&auto=format&fit=crop" 
+                            alt="EX JANIYA Gaming Avatar" 
+                            class="w-full h-full object-cover rounded-full filter contrast-125 brightness-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500"
+                            onerror="this.src='https://placehold.co/400x400/100005/ff0033?text=EX+JANIYA';"
+                        >
+                        <!-- Dark Red Vignette Overlay -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-t from-brand-bgDark via-transparent to-brand-red/20 pointer-events-none"></div>
+                    </div>
+
+                    <!-- FLOATING STAT CARD 1: Top Right (98% Accuracy) -->
+                    <div class="absolute -top-2 -right-2 sm:right-0 glass-card neon-border p-3.5 rounded-2xl z-20 flex items-center space-x-3 shadow-2xl animate-float">
+                        <div class="w-10 h-10 rounded-xl bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red">
+                            <i class="fa-solid fa-crosshair text-lg"></i>
+                        </div>
+                        <div>
+                            <div class="font-orbitron font-black text-sm text-white">98% Accuracy</div>
+                            <div class="text-[11px] text-gray-400 font-medium">Headshot Rate</div>
+                        </div>
+                    </div>
+
+                    <!-- FLOATING STAT CARD 2: Center Left (8,000+ Gamers) -->
+                    <div class="absolute top-1/2 -left-6 sm:-left-10 -translate-y-1/2 glass-card neon-border p-3.5 rounded-2xl z-20 flex items-center space-x-3 shadow-2xl animate-float-delayed">
+                        <div class="w-10 h-10 rounded-xl bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red">
+                            <i class="fa-solid fa-users text-lg"></i>
+                        </div>
+                        <div>
+                            <div class="font-orbitron font-black text-sm text-white">8,000+ Gamers</div>
+                            <div class="text-[11px] text-gray-400 font-medium">Happy Customers</div>
+                        </div>
+                    </div>
+
+                    <!-- FLOATING STAT CARD 3: Bottom Right (0ms Delay) -->
+                    <div class="absolute -bottom-2 right-2 sm:right-4 glass-card neon-border p-3.5 rounded-2xl z-20 flex items-center space-x-3 shadow-2xl animate-float">
+                        <div class="w-10 h-10 rounded-xl bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red">
+                            <i class="fa-solid fa-bolt text-lg"></i>
+                        </div>
+                        <div>
+                            <div class="font-orbitron font-black text-sm text-white">0ms Delay</div>
+                            <div class="text-[11px] text-gray-400 font-medium">Input Response</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ================= FLOATING ACTION BUTTON (CHAT) ================= -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" 
+           class="neon-button w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl transition-transform hover:scale-110 active:scale-95"
+           title="Contact Support on WhatsApp">
+            <i class="fa-solid fa-comment-dots"></i>
+        </a>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="w-full border-t border-gray-900 bg-black/50 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500">
+            <p>&copy; 2026 EX JANIYA Store. All Rights Reserved. Not affiliated with Free Fire or Garena.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript for Mobile Menu Drawer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close menu when clicking outside or on links
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
